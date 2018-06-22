@@ -3,12 +3,12 @@ from pygame.locals import *
 
 # Globals
 
-SCREEN_W_H = 700,700
+SCREEN_W_H = 600,600
 
 FPS = 200 # Uoc mo cua moi game thu ^^!
 
 # Kiem soat toc do cua Ran
-MOVE_SPEED = 1
+
 NUM_FRAMES_TO_DELAY_MOVE = 10
 
 APPLE_COLOR = pygame.Color(255, 0, 0)  # mau do
@@ -98,7 +98,7 @@ class Snake(Chainable):
 
     def __init__(self):
         self.direction = 'right'  # mac dinh di chuyen ban dua tu Phai qua trai
-        self.moveDist = SQUARE_BLOCK_SIZE * MOVE_SPEED
+        self.moveDist = SQUARE_BLOCK_SIZE
         self.segments = []
         self.size = 0
         for i in range(2):
@@ -191,7 +191,7 @@ def setupScreen():
 
 def main():
     screen = setupScreen()
-
+    pygame.display.set_caption("Snake 2.0")
     fillRect = Rect(0, 0, SCREEN_W_H[0], SCREEN_W_H[1])
 
     screen.fill((255, 0, 0))
